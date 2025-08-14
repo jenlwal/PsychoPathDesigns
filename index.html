@@ -82,6 +82,18 @@
     form input[type="submit"]:hover {
       background-color: #e6004c;
     }
+    #confirmation {
+      display: none;
+      margin-top: 20px;
+      color: #ff0055;
+      font-weight: bold;
+      transition: opacity 0.5s ease-in;
+      opacity: 0;
+    }
+    #confirmation.show {
+      display: block;
+      opacity: 1;
+    }
     footer {
       background-color: #111;
       padding: 20px;
@@ -109,7 +121,7 @@
 
   <section>
     <h2>Contact Us</h2>
-    <form action="mailto:psychopthesigns4@outlook.com" method="post" enctype="text/plain">
+    <form id="contactForm">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
 
@@ -121,13 +133,21 @@
 
       <input type="submit" value="Send">
     </form>
+
+    <div id="confirmation">✅ Message sent! We'll be in touch soon.</div>
   </section>
 
   <footer>
     &copy; 2025 PsychoPath Designs. All rights reserved.
   </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const confirmation = document.getElementById("confirmation");
+      confirmation.classList.add("show");
+    });
+  </script>
 </body>
 </html>
-
-
 
