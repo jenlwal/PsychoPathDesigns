@@ -5,20 +5,80 @@
   <title>PsychoPath Designs</title>
   <style>
     body {
-      background-color: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f0f0f;
+      color: #f5f5f5;
       text-align: center;
-      padding: 50px;
     }
-    h1 {
+    header {
+      background-color: #ff0055;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo-container img {
+      max-height: 80px;
+      border-radius: 10px;
+    }
+    .logo-container h1 {
       font-size: 3em;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+    p.tagline {
+      font-size: 1.2em;
+      margin-top: 10px;
+      font-style: italic;
+    }
+    section {
+      padding: 40px 20px;
+    }
+    .cta {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .cta a {
       color: #ff0055;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #111;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to PsychoPath Designs</h1>
-  <p>Creative chaos meets professional polish.</p>
+  <header>
+    <div class="logo-container">
+      <img src="logo.jpeg" alt="PsychoPath Designs Logo">
+      <h1>PsychoPath Designs</h1>
+    </div>
+    <p class="tagline">Creative chaos meets professional polish.</p>
+  </header>
+
+  <section>
+    <h2>What We Do</h2>
+    <p>We specialize in 3D printed art, custom stickers, shirts, and window decals that make a statement.</p>
+    <div class="cta">
+      <p>Want something custom? <a href="#">Contact us</a> and let’s make it happen.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 PsychoPath Designs. All rights reserved.
+  </footer>
 </body>
 </html>
