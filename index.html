@@ -52,31 +52,36 @@
       text-decoration: none;
       font-weight: bold;
     }
-
-    /* Gallery Styles */
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 40px;
-    }
-    .item {
+    form {
       background-color: #1a1a1a;
-      padding: 10px;
+      padding: 20px;
       border-radius: 10px;
-      width: 200px;
+      display: inline-block;
+      text-align: left;
+      max-width: 400px;
+      margin: 0 auto;
     }
-    .item img {
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    form input, form textarea {
       width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: none;
       border-radius: 5px;
     }
-    .item p {
-      margin-top: 10px;
-      font-size: 1em;
-      color: #ff0055;
+    form input[type="submit"] {
+      background-color: #ff0055;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
     }
-
+    form input[type="submit"]:hover {
+      background-color: #e6004c;
+    }
     footer {
       background-color: #111;
       padding: 20px;
@@ -103,25 +108,19 @@
   </section>
 
   <section>
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <div class="item">
-        <img src="shirt1.jpg" alt="Bold Statement Tee">
-        <p>Bold Statement Tee</p>
-      </div>
-      <div class="item">
-        <img src="sticker1.jpg" alt="Chaos Sticker Pack">
-        <p>Chaos Sticker Pack</p>
-      </div>
-      <div class="item">
-        <img src="decal1.jpg" alt="Skull Window Decal">
-        <p>Skull Window Decal</p>
-      </div>
-      <div class="item">
-        <img src="print1.jpg" alt="3D Printed Art">
-        <p>3D Printed Art</p>
-      </div>
-    </div>
+    <h2>Contact Us</h2>
+    <form action="mailto:psychopthesigns4@outlook.com" method="post" enctype="text/plain">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <input type="submit" value="Send">
+    </form>
   </section>
 
   <footer>
@@ -129,4 +128,6 @@
   </footer>
 </body>
 </html>
+
+
 
