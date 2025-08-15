@@ -52,6 +52,22 @@
       text-decoration: none;
       font-weight: bold;
     }
+    .carousel {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .carousel img {
+      width: 100%;
+      display: none;
+      transition: opacity 1s ease-in-out;
+    }
+    .carousel img.active {
+      display: block;
+      opacity: 1;
+    }
     .gallery {
       display: flex;
       justify-content: center;
@@ -126,7 +142,64 @@
   </section>
 
   <section>
+    <h2>Featured Products</h2>
+    <div class="carousel">
+      <img src="featured1.jpg" alt="Featured Product 1" class="active">
+      <img src="featured2.jpg" alt="Featured Product 2">
+      <img src="featured3.jpg" alt="Featured Product 3">
+    </div>
+  </section>
+
+  <section>
     <h2>Gallery Preview</h2>
     <p>Click any image to view it full-size. More coming soon!</p>
     <div class="gallery">
-      <img src="product1.jpg" alt="3D Print" onclick="openLight
+      <img src="product1.jpg" alt="3D Print" onclick="openLightbox(this)">
+      <img src="product2.jpg" alt="Sticker Design" onclick="openLightbox(this)">
+      <img src="product3.jpg" alt="Shirt Graphic" onclick="openLightbox(this)">
+    </div>
+  </section>
+
+  <section>
+    <h2>Follow Us</h2>
+    <p>Stay connected and see what’s next:</p>
+    <div class="social-links">
+      <a href="https://instagram.com/psychopathdesigns" target="_blank">Instagram</a>
+      <a href="https://facebook.com/psychopathdesigns" target="_blank">Facebook</a>
+      <a href="mailto:psychopthesigns4@outlook.com">Email Us</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 PsychoPath Designs. All rights reserved.
+  </footer>
+
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Full View">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    // Carousel logic
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel img');
+
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 3000);
+  </script>
+</body>
+</html>
+
