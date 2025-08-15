@@ -127,8 +127,102 @@
       margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
-      transition
+      transition: color 0.3s ease;
+    }
+    .social-links a:hover {
+      color: #ffffff;
+    }
+    footer {
+      background-color: #111;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="logo.jpeg" alt="PsychoPath Designs Logo">
+      <h1>PsychoPath Designs</h1>
+    </div>
+    <p class="tagline">Creative chaos meets professional polish.</p>
+  </header>
 
+  <section>
+    <h2>What We Do</h2>
+    <p>We specialize in 3D printed art, custom stickers, shirts, and window decals that make a statement.</p>
+    <div class="cta">
+      <p>Want something custom? <a href="mailto:psychopthesigns4@outlook.com">Email us</a> and let’s make it happen.</p>
+    </div>
+  </section>
 
+  <section>
+    <h2>Welcome to PsychoPath Designs</h2>
+    <p style="font-size: 1.5em; font-weight: bold; margin-top: 10px;">
+      Where bold ideas become unforgettable designs.
+    </p>
+  </section>
 
+  <section>
+    <h2>Featured Products</h2>
+    <div class="carousel">
+      <img src="featured1.jpg" alt="Featured Product 1" class="active">
+      <img src="featured2.jpg" alt="Featured Product 2">
+      <img src="featured3.jpg" alt="Featured Product 3">
+    </div>
+  </section>
+
+  <section>
+    <h2>Gallery Preview</h2>
+    <p>Click any image to view it full-size. More coming soon!</p>
+    <div class="gallery">
+      <img src="product1.jpg" alt="3D Print" onclick="openLightbox(this)">
+      <img src="product2.jpg" alt="Sticker Design" onclick="openLightbox(this)">
+      <img src="product3.jpg" alt="Shirt Graphic" onclick="openLightbox(this)">
+    </div>
+  </section>
+
+  <section>
+    <h2>Follow Us</h2>
+    <p>Stay connected and see what’s next:</p>
+    <div class="social-links">
+      <a href="https://instagram.com/psychopathdesigns" target="_blank">Instagram</a>
+      <a href="https://facebook.com/psychopathdesigns" target="_blank">Facebook</a>
+      <a href="mailto:psychopthesigns4@outlook.com">Email Us</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 PsychoPath Designs. All rights reserved.
+  </footer>
+
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Full View">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    // Carousel logic
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel img');
+
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 3000);
+  </script>
+</body>
+</html>
 
