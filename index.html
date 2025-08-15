@@ -52,6 +52,47 @@
       text-decoration: none;
       font-weight: bold;
     }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .gallery img {
+      max-width: 200px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+    .social-links a {
+      color: #ff0055;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .social-links a:hover {
+      color: #ffffff;
+    }
     footer {
       background-color: #111;
       padding: 20px;
@@ -76,39 +117,16 @@
       <p>Want something custom? <a href="mailto:psychopthesigns4@outlook.com">Email us</a> and let’s make it happen.</p>
     </div>
   </section>
-  
-<section>
-  <h2>Welcome to PsychoPath Designs</h2>
-  <p style="font-size: 1.5em; font-weight: bold; margin-top: 10px;">
-    Where bold ideas become unforgettable designs.
-  </p>
-</section>
 
-<section>
-  <h2>Gallery Preview</h2>
-  <p>Check out our latest creations below. Full gallery coming soon!</p>
-  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
-    <img src="product1.jpg" alt="Sample Product" style="max-width: 200px; border-radius: 10px;">
-    <img src="product2.jpg" alt="Sample Product" style="max-width: 200px; border-radius: 10px;">
-    <img src="product3.jpg" alt="Sample Product" style="max-width: 200px; border-radius: 10px;">
-  </div>
-</section>
+  <section>
+    <h2>Welcome to PsychoPath Designs</h2>
+    <p style="font-size: 1.5em; font-weight: bold; margin-top: 10px;">
+      Where bold ideas become unforgettable designs.
+    </p>
+  </section>
 
-<section>
-  <h2>Follow Us</h2>
-  <p>Stay connected and see what’s next:</p>
-  <div style="margin-top: 10px;">
-    <a href="https://instagram.com/psychopathdesigns" target="_blank" style="color:#ff0055; margin-right: 15px;">Instagram</a>
-    <a href="https://facebook.com/psychopathdesigns" target="_blank" style="color:#ff0055; margin-right: 15px;">Facebook</a>
-    <a href="mailto:psychopthesigns4@outlook.com" style="color:#ff0055;">Email Us</a>
-  </div>
-</section>
-
-  <footer>
-    &copy; 2025 PsychoPath Designs. All rights reserved.
-  </footer>
-</body>
-</html>
-
-
-
+  <section>
+    <h2>Gallery Preview</h2>
+    <p>Click any image to view it full-size. More coming soon!</p>
+    <div class="gallery">
+      <img src="product1.jpg" alt="3D Print" onclick="openLight
